@@ -15,7 +15,6 @@
                 "Ru": "file:Ru.lanl2dz.ecp.nwc"
             },
             "init_guess": "atom",
-            "cartesian": true,
             "multiplicity": 1,
             "stability_analysis": true
         }

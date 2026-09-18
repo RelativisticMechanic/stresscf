@@ -361,13 +361,13 @@ def testMoleculeDIISMethod(molecule_name: str, molecule: gto.Mole,
         history["E"].append(e)
         history["dE"].append(de)
         history["comm"].append(pulay_norm)
-        progress.update(len(history["cycle"]))
+        progress.update(len(history["cycle"]), e - prev_e)
 
     mf.callback = callback
 
     import time
     start_time = time.perf_counter() * 1000.0
-    progress.update(0)
+    progress.update(0, 0)
     try:
         try:
             if initial_dm is not None:

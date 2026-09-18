@@ -17,7 +17,6 @@
             "init_guess": "triplet",
             "triplet_init_guess": "atom",
             "triplet_cache_dir": "guess_cache",
-            "cartesian": true,
             "multiplicity": 1,
             "stability_analysis": true
         }

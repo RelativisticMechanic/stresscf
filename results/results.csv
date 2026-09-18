@@ -91,3 +91,15 @@ n-methyl-2-nitrovinylamine,LCIIS,-375.5659951750111,14,True,ok,
 cr2,CDIIS,-2085.501480843742,12,True,ok,
 cr2,EDIISCDIIS,-2085.5014808437395,12,True,ok,
 cr2,LCIIS,-2085.501480843738,12,True,ok,
+ru4co_bs_triplet,CDIIS,-488.73534505746863,44,False,ok,
+ru4co_bs_triplet,EDIISCDIIS,-488.73534506002,59,True,ok,
+ru4co_bs_triplet,LCIIS,-488.73534506036106,58,True,ok,
+ru4co_bs_triplet,CDIIS,-488.73534505746863,44,False,ok,
+ru4co_bs_triplet,EDIISCDIIS,-488.73534506002,59,True,ok,
+ru4co_bs_triplet,LCIIS,,17,False,failed,"UnboundLocalError(""cannot access local variable 'final_energy' where it is not associated with a value"")"
+uf4,CDIIS,,68,False,failed,"UnboundLocalError(""cannot access local variable 'final_energy' where it is not associated with a value"")"
+uf4,EDIISCDIIS,-451.17910896550245,31,True,ok,
+uf4,LCIIS,,9,False,failed,"UnboundLocalError(""cannot access local variable 'final_energy' where it is not associated with a value"")"
+uf4,CDIIS,-451.20156528676046,73,True,ok,
+uf4,EDIISCDIIS,-451.17910896550245,31,True,ok,
+uf4,LCIIS,-451.179108965502,12,True,ok,

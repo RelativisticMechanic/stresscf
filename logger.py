@@ -33,7 +33,7 @@ class ProgressBar:
         self._last_line = ""
         self._rendered = False
 
-    def update(self, current):
+    def update(self, current, de):
         """Redraw the bar with *current* completed iterations."""
         if not self.enabled:
             return
@@ -47,7 +47,14 @@ class ProgressBar:
             f"[{timestamp} {self.name}]: "
             f"[{bar}] {current:>{counter_width}}/{self.total}"
         )
-        self.stream.write(f"\r{self._last_line}")
+
+        # ANSI color codes
+        GREEN = '\033[92m'
+        RED = '\033[91m'
+        RESET = '\033[0m'
+        de_sign_arrow = f"{GREEN}↓{RESET}" if de <= 0 else f"{RED}↑{RESET}"
+
+        self.stream.write(f"\r{self._last_line} [{de_sign_arrow}{abs(de):.5e}]")
         self.stream.flush()
         self._rendered = True
 

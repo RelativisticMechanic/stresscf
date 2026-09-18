@@ -17,8 +17,12 @@ These include:
 | Ru4CO    | RB3LYP/LANL2DZ     | Harris |
 | Ru4CO(BS)| UB3LYP/LANL2DZ     | Triplet|
 
+The LANL2DZ basis functions are taken from Basis Set Exchange (BSE) and are supplied under basis/ in Gaussian format
+while the ECPs are in NWChem format.
+
 In addition to this, the package also includes implementation of Pure Roothaan Hall, LCIIS (Li & Yaron, 2016) and ODA (Cances & Le Bris, 1999) that can be readily used with pyscf.
 
+The program will also generate curves for change in energy per iteration, 
 Example output (on UF4):
 
 ```

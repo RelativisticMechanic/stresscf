@@ -8,13 +8,13 @@ These include:
 
 | Molecule | Method / Basis     | Guess  |
 | ---      | ---                | ---    |
-| CH3CHO   | UHF/6-31G(d)       | Harris |
-| CrC      | RB3LYP/6-31G       | Harris |
+| CH3CHO   | UHF/6-31G(d)       | SAD    |
+| CrC      | RB3LYP/6-31G       | SAD    |
 | CdIm2    | RB3LYP/3-21G       | Core   |
-| SiH4     | RVWN5/VWN5         | Harris |
-| UF4      | RB3LYP/LANL2DZ     | Harris |
+| SiH4     | RVWN5/VWN5         | SAD    |
+| UF4      | RB3LYP/LANL2DZ     | SAD    |
 | UF(BS)   | UB3LYP/LANL2DZ     | Triplet|
-| Ru4CO    | RB3LYP/LANL2DZ     | Harris |
+| Ru4CO    | RB3LYP/LANL2DZ     | SAD    |
 | Ru4CO(BS)| UB3LYP/LANL2DZ     | Triplet|
 
 The LANL2DZ basis functions are taken from Basis Set Exchange (BSE) and are supplied under basis/ in Gaussian format

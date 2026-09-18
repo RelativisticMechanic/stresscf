@@ -6,16 +6,19 @@ The benchmarks are taken from "Comparison of self-consistent field convergence a
 
 These include:
 
-| Molecule | Method / Basis     | Guess  |
-| ---      | ---                | ---    |
-| CH3CHO   | UHF/6-31G(d)       | SAD    |
-| CrC      | RB3LYP/6-31G       | SAD    |
-| CdIm2    | RB3LYP/3-21G       | Core   |
-| SiH4     | RVWN5/VWN5         | SAD    |
-| UF4      | RB3LYP/LANL2DZ     | SAD    |
-| UF(BS)   | UB3LYP/LANL2DZ     | Triplet|
-| Ru4CO    | RB3LYP/LANL2DZ     | SAD    |
-| Ru4CO(BS)| UB3LYP/LANL2DZ     | Triplet|
+| Molecule                         | Method / Basis        | Guess  | 
+| ---                              | ---                   | ---    |
+| CH3CHO                           | UHF/6-31G(d)          | SAD    |
+| CrC                              | RB3LYP/6-31G          | SAD    |
+| CdIm2                            | RB3LYP/3-21G          | Core   |
+| SiH4                             | RVWN5/VWN5            | SAD    |
+| UF4                              | RB3LYP/LANL2DZ        | SAD    |
+| UF(BS)                           | UB3LYP/LANL2DZ        | Triplet|
+| Ru4CO                            | RB3LYP/LANL2DZ        | SAD    |
+| Ru4CO(BS)                        | UB3LYP/LANL2DZ        | Triplet|
+| Cr2                              | RHF/6-31G             | Core   |
+| N-Methyl-(2-nitrovinyl)amine (E) | RHF/6-31G(d)          | Core   |
+
 
 The LANL2DZ basis functions are taken from Basis Set Exchange (BSE) and are supplied under basis/ in Gaussian format
 while the ECPs are in NWChem format.

@@ -17,10 +17,8 @@ def DIISExtrapolate(xs, residuals, return_c=False, rcond=1e-12):
             B[j, i] = bij
 
     # Make the singular-value cutoff insensitive to residual magnitude.
-    scale = max(
-        np.max(np.abs(np.diag(B))),
-        np.finfo(np.float64).tiny,
-    )
+    scale = max(np.max(np.abs(np.diag(B))), np.finfo(np.float64).tiny)
+
     B /= scale
 
     A = np.zeros((n + 1, n + 1), dtype=np.float64)
@@ -37,38 +35,28 @@ def DIISExtrapolate(xs, residuals, return_c=False, rcond=1e-12):
 
     # Compensate for small constraint errors from the pseudoinverse.
     coefficient_sum = np.sum(c)
+
     if abs(coefficient_sum) < 1e-14:
         c = np.zeros(n)
         c[-1] = 1.0
     else:
         c /= coefficient_sum
 
-    new_x = np.zeros_like(
-        xs[0],
-        dtype=np.result_type(*xs, np.float64),
-    )
+    new_x = np.zeros_like(xs[0], dtype=np.result_type(*xs, np.float64))
+
     for coefficient, x in zip(c, xs):
         new_x += coefficient * x
 
     if return_c:
         return new_x, c
+    
     return new_x
 
 
 class DIIS(CDIIS):
-    def __init__(
-        self,
-        mf=None,
-        filename=None,
-        Corth=None,
-        space=20,
-        **kwargs,
-    ):
-        super().__init__(
-            mf=mf,
-            filename=filename,
-            Corth=Corth,
-        )
+    def __init__(self, mf=None, filename=None, Corth=None, space=20, **kwargs):
+        super().__init__(mf=mf, filename=filename, Corth=Corth)
+        
         self.space = space
         self.residuals_history = []
         self.fock_history = []

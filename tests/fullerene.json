@@ -1,0 +1,14 @@
+{
+    "tests": {
+        "fullerene": {
+            "file":"fullerene.xyz",
+            "method": "rhf",
+            "basis": "6-31G",
+            "init_guess": "core",
+            "charge": 0,
+            "multiplicity": 1,
+            "stability_analysis": true,
+            "cartesian": true
+        }
+    }
+}

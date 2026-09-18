@@ -9,7 +9,7 @@ DIIS_METHODS = [
 ]
 
 # DIIS history size
-DIIS_M = 20
+DIIS_M = 8
 
 # When to start DIIS (Iteration 0)
 DIIS_START = 0

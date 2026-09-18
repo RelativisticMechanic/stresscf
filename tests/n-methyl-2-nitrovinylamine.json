@@ -1,0 +1,14 @@
+{
+    "tests": {
+        "n-methyl-2-nitrovinylamine": {
+            "file":"n-methyl-2-nitrovinylamine.xyz",
+            "method": "rhf",
+            "basis": "6-31G(d)",
+            "init_guess": "core",
+            "charge": 0,
+            "multiplicity": 1,
+            "stability_analysis": true,
+            "cartesian": true
+        }
+    }
+}

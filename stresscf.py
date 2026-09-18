@@ -42,7 +42,7 @@ from pyscf.scf.hf import SCF
 
 from pyscf.scf.diis import CDIIS, EDIIS, ADIIS
 
-from logger import getLogger
+from logger import getLogger, ProgressBar
 from triplet import fetchTripletGuess
 from algo.oda import ODAInterpolate
 
@@ -322,7 +322,7 @@ def testMoleculeDIISMethod(molecule_name: str, molecule: gto.Mole,
 
     status = "ok"
     error_message = ""
-
+    progress = ProgressBar(mf.max_cycle, name=logger.name)
 
     def callback(envs):
         cycle = int(envs.get("cycle", len(history["cycle"])))
@@ -361,39 +361,43 @@ def testMoleculeDIISMethod(molecule_name: str, molecule: gto.Mole,
         history["E"].append(e)
         history["dE"].append(de)
         history["comm"].append(pulay_norm)
-        
+        progress.update(len(history["cycle"]))
+
     mf.callback = callback
 
     import time
     start_time = time.perf_counter() * 1000.0
-
+    progress.update(0)
     try:
-        if initial_dm is not None:
-            # Give every accelerator an independent copy of the same guess.
-            final_energy = mf.kernel(dm0=np.array(initial_dm, copy=True))
-        else:
-            final_energy = mf.kernel()
-
-        converged = bool(mf.converged)
-        end_time = time.perf_counter() * 1000.0
-
-        logger.info(f"Energy: {final_energy} ({'c' if converged else 'x'})")
-        logger.info(f"Iterations: {len(history['cycle'])}")
-        logger.info(f"Time taken: {int(end_time - start_time)}  ms")
-        logger.info(f"Time/Iteration: {((end_time - start_time) / len(history['cycle'])):.2f} ms")
-
-        if stability_analysis:
-            if converged:
-                mo_i, mo_e, stable_i, stable_e = mf.stability(
-                    internal=True,
-                    external=True,
-                    return_status=True
-                )
-
-                logger.info(f"Internal stability: {stable_i}")
-                logger.info(f"External stability: {stable_e}")
+        try:
+            if initial_dm is not None:
+                # Give every accelerator an independent copy of the same guess.
+                final_energy = mf.kernel(dm0=np.array(initial_dm, copy=True))
             else:
-                logger.info("Did not converge, will not conduct stability analysis.")
+                final_energy = mf.kernel()
+        finally:
+            progress.finish()
+
+            converged = bool(mf.converged)
+            end_time = time.perf_counter() * 1000.0
+
+            logger.info(f"Energy: {final_energy} ({'c' if converged else 'x'})")
+            logger.info(f"Iterations: {len(history['cycle'])}")
+            logger.info(f"Time taken: {int(end_time - start_time)}  ms")
+            logger.info(f"Time/Iteration: {((end_time - start_time) / len(history['cycle'])):.2f} ms")
+
+            if stability_analysis:
+                if converged:
+                    mo_i, mo_e, stable_i, stable_e = mf.stability(
+                        internal=True,
+                        external=True,
+                        return_status=True
+                    )
+
+                    logger.info(f"Internal stability: {stable_i}")
+                    logger.info(f"External stability: {stable_e}")
+                else:
+                    logger.info("Did not converge, will not conduct stability analysis.")
 
     except Exception as exc:
         final_energy = np.nan

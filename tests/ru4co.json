@@ -14,7 +14,8 @@
             "ecp_files": {
                 "Ru": "file:Ru.lanl2dz.ecp.nwc"
             },
-            "init_guess": "harris",
+            "init_guess": "atom",
+            "cartesian": true,
             "multiplicity": 1,
             "stability_analysis": true
         }

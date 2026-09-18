@@ -43,12 +43,13 @@ from pyscf.scf.hf import SCF
 from pyscf.scf.diis import CDIIS, EDIIS, ADIIS
 
 from logger import getLogger
-from harris import harrisInitialGuess
 from triplet import fetchTripletGuess
 from algo.oda import ODAInterpolate
 
 from config import DIIS_METHODS, DIIS_M, DIIS_START, GRID_LEVEL, CONV_E, CONV_G
+from config import DYNAMIC_DAMPING
 from config import PLOT_LINE_WIDTH, PLOT_MARKER_SIZE
+from config import SCF_MAX_ITER
 
 # Support both HF and DFT inputs
 METHOD_MAP = {
@@ -281,7 +282,7 @@ def testMoleculeDIISMethod(molecule_name: str, molecule: gto.Mole,
     mf.conv_tol_grad = CONV_G
     mf.level_shift = 0
     mf.damp = 0.0
-    mf.max_cycle = 250
+    mf.max_cycle = SCF_MAX_ITER
 
     try:
         mf.grids.level = GRID_LEVEL
@@ -308,7 +309,9 @@ def testMoleculeDIISMethod(molecule_name: str, molecule: gto.Mole,
     # Gaussian 09 applies dynamic damping only to its first inter-iteration
     # step.  Keep this SCF policy in the benchmark driver, not in any DIIS
     # implementation, and begin the accelerator history afterwards.
-    installFirstIterationDamping(mf)
+
+    if DYNAMIC_DAMPING:
+        installFirstIterationDamping(mf)
 
     history = {
         "cycle": [],
@@ -368,8 +371,6 @@ def testMoleculeDIISMethod(molecule_name: str, molecule: gto.Mole,
         if initial_dm is not None:
             # Give every accelerator an independent copy of the same guess.
             final_energy = mf.kernel(dm0=np.array(initial_dm, copy=True))
-        elif init_guess == "harris":
-            final_energy = mf.kernel(dm0=harrisInitialGuess(mf))
         else:
             final_energy = mf.kernel()
 
@@ -561,7 +562,7 @@ def runTestCase(test_case, molecule_data, test_dir_root):
                 "triplet_cache_dir", "guess_cache"
             )),
 
-            source_init_guess=molecule_data.get("triplet_init_guess", "harris"),
+            source_init_guess=molecule_data.get("triplet_init_guess", "atom"),
 
             max_spin_contamination=molecule_data.get(
                 "triplet_max_spin_contamination", None

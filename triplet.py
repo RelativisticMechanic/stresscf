@@ -18,8 +18,6 @@ import numpy as np
 import pyscf
 from pyscf import scf
 
-from harris import harrisInitialGuess
-
 
 TRIPLET_CACHE_VERSION = 1
 
@@ -225,7 +223,7 @@ def saveTripletCache(path, cache_key, result):
             temporary_path.unlink()
 
 
-def buildTripletGuess(target_mf, source_init_guess="harris", max_spin_contamination=None):
+def buildTripletGuess(target_mf, source_init_guess="atom", max_spin_contamination=None):
     """
     Construct an M_S=0 unrestricted density from a converged triplet.
 

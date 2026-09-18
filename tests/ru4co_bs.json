@@ -15,8 +15,9 @@
                 "Ru": "file:Ru.lanl2dz.ecp.nwc"
             },
             "init_guess": "triplet",
-            "triplet_init_guess": "harris",
+            "triplet_init_guess": "atom",
             "triplet_cache_dir": "guess_cache",
+            "cartesian": true,
             "multiplicity": 1,
             "stability_analysis": true
         }

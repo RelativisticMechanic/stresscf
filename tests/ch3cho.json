@@ -4,7 +4,7 @@
             "file": "ch3cho.xyz",
             "method": "uhf",
             "basis": "6-31G(d)",
-            "init_guess": "harris",
+            "init_guess": "atom",
             "cartesian": true
         }
     }

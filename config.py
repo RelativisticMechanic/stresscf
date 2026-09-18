@@ -21,6 +21,12 @@ GRID_LEVEL = 3
 CONV_E = 1e-10
 CONV_G = 1e-5
 
+# Maximum iterations
+SCF_MAX_ITER = 250
+
+# Damping
+DYNAMIC_DAMPING = False
+
 # Plot configuration
 PLOT_LINE_WIDTH = 1.2
 PLOT_MARKER_SIZE = 5

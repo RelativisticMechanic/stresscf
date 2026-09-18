@@ -13,7 +13,8 @@
             "ecp_files": {
                 "U": "file:U.lanl2dz.ecp.nwc"
             },
-            "init_guess": "harris",
+            "init_guess": "atom",
+            "cartesian": false,
             "multiplicity": 1,
             "stability_analysis": true
         }

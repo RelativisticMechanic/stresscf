@@ -5,11 +5,10 @@
             "method": "rks",
             "xc": "b3lyp",
             "basis": "6-31G",
-            "init_guess": "harris",
+            "init_guess": "atom",
             "charge": 0,
             "multiplicity": 1,
-            "stability_analysis": true,
-            "cartesian": true
+            "stability_analysis": true
         }
     }
 }

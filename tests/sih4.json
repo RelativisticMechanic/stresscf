@@ -1,0 +1,13 @@
+{
+    "tests": {
+        "sih4": {
+            "file":"sih4.xyz",
+            "method":"rks",
+            "xc":"lda,vwn5",
+            "basis": "6-31G(d)",
+            "init_guess": "harris",
+            "stability_analysis": true,
+            "cartesian": true
+        }
+    }
+}

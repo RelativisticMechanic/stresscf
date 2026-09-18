@@ -1,0 +1,15 @@
+{
+    "tests": {
+        "crc": {
+            "file":"crc.xyz",
+            "method": "rks",
+            "xc": "b3lyp",
+            "basis": "6-31G",
+            "init_guess": "harris",
+            "charge": 0,
+            "multiplicity": 1,
+            "stability_analysis": true,
+            "cartesian": true
+        }
+    }
+}

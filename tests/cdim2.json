@@ -1,0 +1,15 @@
+{
+    "tests": {
+        "cdim2": {
+            "file":"cdim2.xyz",
+            "method":"rks",
+            "xc":"b3lyp",
+            "basis": "3-21G",
+            "init_guess": "hcore",
+            "charge": 2,
+            "multiplicity": 1,
+            "stability_analysis": true,
+            "cartesian": true
+        }
+    }
+}

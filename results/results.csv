@@ -1,0 +1,9 @@
+molecule,label,energy,cycles,converged,status,error_message
+uf4,CDIIS,-451.2187381039033,36,True,ok,
+uf4,EDIIS,-430.57926777222167,250,False,ok,
+uf4,ADIIS,-451.21862216202237,250,False,ok,
+uf4,LCIIS,-451.1791089655013,11,True,ok,
+uf4_bs_triplet,CDIIS,-451.22961321409457,19,True,ok,
+uf4_bs_triplet,EDIIS,-451.25673577808334,250,False,ok,
+uf4_bs_triplet,ADIIS,-451.26012940173507,250,False,ok,
+uf4_bs_triplet,LCIIS,-451.2296132141921,19,True,ok,

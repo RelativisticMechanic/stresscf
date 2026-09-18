@@ -1,0 +1,23 @@
+{
+    "tests": {
+        "uf4_bs_triplet": {
+            "file": "uf4.xyz",
+            "method": "uks",
+            "xc": "b3lyp",
+            "basis": "custom",
+            "basis_files": {
+                "F": "file:F.lanl2dz.gbs",
+                "U": "file:U.lanl2dz.gbs"
+            },
+            "ecp": "custom",
+            "ecp_files": {
+                "U": "file:U.lanl2dz.ecp.nwc"
+            },
+            "init_guess": "triplet",
+            "triplet_init_guess": "harris",
+            "triplet_cache_dir": "guess_cache",
+            "multiplicity": 1,
+            "stability_analysis": true
+        }
+    }
+}

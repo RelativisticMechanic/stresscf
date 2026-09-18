@@ -1,0 +1,24 @@
+{
+    "tests": {
+        "ru4co_bs_triplet": {
+            "file": "ru4co.xyz",
+            "method": "uks",
+            "xc": "b3lyp",
+            "basis": "custom",
+            "basis_files": {
+                "Ru": "file:Ru.lanl2dz.gbs",
+                "C": "file:C.lanl2dz.gbs",
+                "O": "file:O.lanl2dz.gbs"
+            },
+            "ecp": "custom",
+            "ecp_files": {
+                "Ru": "file:Ru.lanl2dz.ecp.nwc"
+            },
+            "init_guess": "triplet",
+            "triplet_init_guess": "harris",
+            "triplet_cache_dir": "guess_cache",
+            "multiplicity": 1,
+            "stability_analysis": true
+        }
+    }
+}

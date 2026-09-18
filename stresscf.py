@@ -45,6 +45,7 @@ from pyscf.scf.diis import CDIIS, EDIIS, ADIIS
 from logger import getLogger
 from harris import harrisInitialGuess
 from triplet import fetchTripletGuess
+from algo.oda import ODAInterpolate
 
 from config import DIIS_METHODS, DIIS_M, DIIS_START, GRID_LEVEL, CONV_E, CONV_G
 from config import PLOT_LINE_WIDTH, PLOT_MARKER_SIZE
@@ -68,6 +69,88 @@ CUSTOM_VARIABLE_ACCESSOR = {
 }
 
 logger = getLogger("STRESSCF")
+
+def installFirstIterationDamping(mf):
+    """Apply Gaussian-style ODA damping before DIIS starts collecting data.
+
+    The first SCF Fock matrix is returned unchanged.  On the next cycle, ODA
+    interpolates between the first and second Fock/density pairs.  Subsequent
+    cycles are passed to PySCF unchanged, so the configured accelerator starts
+    with a clean, post-damping history.
+
+    Returns a small state dictionary for diagnostics and tests.
+    """
+    get_fock_without_driver_damping = mf.get_fock
+    state = {
+        "previous_fock": None,
+        "previous_dm": None,
+        "new_fraction": None,
+        "damping_factor": None,
+        "complete": False,
+    }
+
+    def get_fock(
+        h1e=None,
+        s1e=None,
+        vhf=None,
+        dm=None,
+        cycle=-1,
+        diis=None,
+        diis_start_cycle=None,
+        level_shift_factor=None,
+        damp_factor=None,
+        fock_last=None,
+    ):
+        common_arguments = {
+            "h1e": h1e,
+            "s1e": s1e,
+            "vhf": vhf,
+            "dm": dm,
+            "cycle": cycle,
+            "diis_start_cycle": diis_start_cycle,
+            "level_shift_factor": level_shift_factor,
+            "damp_factor": damp_factor,
+            "fock_last": fock_last,
+        }
+
+        if diis is not None and cycle in (0, 1):
+            # Suppress DIIS while constructing the two points used by ODA.
+            fock = get_fock_without_driver_damping(
+                diis=None,
+                **common_arguments,
+            )
+
+            if cycle == 0:
+                state["previous_fock"] = np.array(fock, copy=True)
+                state["previous_dm"] = np.array(dm, copy=True)
+                return fock
+
+            if state["previous_fock"] is not None:
+                new_fraction, _, damped_fock = ODAInterpolate(
+                    state["previous_fock"],
+                    fock,
+                    state["previous_dm"],
+                    dm,
+                )
+                new_fraction = float(np.real(new_fraction))
+                state["complete"] = True
+                if np.isfinite(new_fraction):
+                    new_fraction = float(np.clip(new_fraction, 0.0, 1.0))
+                    state["new_fraction"] = new_fraction
+                    state["damping_factor"] = 1.0 - new_fraction
+                    return damped_fock
+
+            # A non-finite ODA model should not abort the SCF calculation.
+            state["complete"] = True
+            return fock
+
+        return get_fock_without_driver_damping(
+            diis=diis,
+            **common_arguments,
+        )
+
+    mf.get_fock = get_fock
+    return state
 
 def convertToFloat(x):
     try:
@@ -221,6 +304,11 @@ def testMoleculeDIISMethod(molecule_name: str, molecule: gto.Mole,
         data_dir = f"./trajectory_data/{molecule_name}_{diis_obj.__name__}"
         mf.diis = diis_obj(custom_variable_access=CUSTOM_VARIABLE_ACCESSOR, test_case_id=data_dir)
         mf.diis.space = DIIS_M
+
+    # Gaussian 09 applies dynamic damping only to its first inter-iteration
+    # step.  Keep this SCF policy in the benchmark driver, not in any DIIS
+    # implementation, and begin the accelerator history afterwards.
+    installFirstIterationDamping(mf)
 
     history = {
         "cycle": [],
@@ -404,7 +492,10 @@ def runTestCase(test_case, molecule_data, test_dir_root):
                     if prefix == "basis":
                         gbs_data = parse_gaussian.parse(f.read())
                     elif prefix == "ecp":
-                        gbs_data = parse_ecp(f.read())
+                        # PySCF has exposed parse_ecp as either a function or
+                        # a module across releases.
+                        parser = getattr(parse_ecp, "parse", parse_ecp)
+                        gbs_data = parser(f.read())
                 custom_data[element] = gbs_data
             else:
                 custom_data[element] = custom_field

@@ -5,19 +5,23 @@
 import numpy as np
 import scipy.optimize
 
-from scipy.optimize import OptimizeResult
-
-def EDIISExtrapolate(etot : list, 
-          focks : list, 
-          densities : list, return_c=False):
+def EDIISExtrapolate(
+    etot: list,
+    focks: list,
+    densities: list,
+    return_c=False,
+    tol=1e-10,
+    maxiter=500,
+):
 
     m = len(etot)
 
     assert(len(focks) == m)
     assert(len(densities) == m)
 
-    focks = np.array(focks)
-    densities = np.array(densities)
+    etot = np.asarray(etot, dtype=float)
+    focks = np.asarray(focks)
+    densities = np.asarray(densities)
 
     nao = focks.shape[-1]
 
@@ -40,62 +44,62 @@ def EDIISExtrapolate(etot : list,
     # Tr(PQ) = \sum{P_pq Q_qp}
     # The n-index is spin A.O., which should be the same.
     # i & j remain
-    FD = np.einsum('inpq,jnqp->ij', focks, densities)
+    FD = np.einsum('inpq,jnqp->ij', focks, densities).real
 
     # Numpy will automatically create a N x N matrix
     # by addition of two N x 1 diagonals.
     A = np.diag(FD) + np.diag(FD)[:, None]
     A -= FD + FD.T
 
-    def fEDIIS(x):
-        # Trick: Instead of enforcing constraints via KKT, use
-        # the idea that \sum{c_i} = 1 and c_i > 0 via squares
-        # and norms.
-        c = x ** 2 / np.sum(x ** 2)
-
+    def fEDIIS(c):
         # EDIIS functional
-        # f^{EDIIS}(c) = c^T E - 0.5 c^T A c
-        return np.einsum('i,i', c, etot) - 0.5 * np.einsum('i,ij,j', c, A, c)
+        # This is the PySCF/Kudin EDIIS convention for the A matrix above.
+        # It also keeps this standalone extrapolator consistent with
+        # pyscf.scf.diis.ediis_minimize.
+        # f^{EDIIS}(c) = c^T E - c^T A c
+        return np.einsum('i,i', c, etot) - np.einsum('i,ij,j', c, A, c)
 
-    def grad_fEDIIS(x):
-        S = np.sum(x ** 2)
-        c = x ** 2 / S
+    def grad_fEDIIS(c):
         # The gradient of EDIIS functional in terms of c is:
-        # df/dc = E - A c
-        dfdc = etot - np.einsum('i,ik->k', c, A)
+        # df/dc = E - 2 A c
+        return etot - 2.0 * np.einsum('i,ik->k', c, A)
 
-        # However, since we are using x, we need df/dx.
-        # df/dx =  [dc/dx]df/dc
-        # c_i = x_i^2 / S (S = sum{x_k^2})
-        # d(c_i)/d(x_j) = (2/S^2)((\delta_ij)(x_i)S - (x_i^2)(x_j))
-        # Generate diagonal
-        xS = np.diag(x * S)
-        # Generate the second term by an outer-product
-        xi2xj = np.einsum('k,n->kn', x**2, x)
-        dcdx = (xS - xi2xj) * (2.0 / S ** 2)
+    # Optimize c directly on the simplex.  Squaring unconstrained auxiliary
+    # variables makes the problem non-convex in those variables and can trap
+    # BFGS at a false stationary point.  Sample the vertices, center, and the
+    # offset points proposed by OpenOrbitalOptimizer, then start SLSQP from
+    # the best sampled coefficient vector.
+    vertices = np.eye(m)
+    center = np.full((1, m), 1.0 / m)
+    offset = np.full((m, m), 1.0 / (m + 2.0))
+    np.fill_diagonal(offset, 3.0 / (m + 2.0))
+    candidates = np.vstack((vertices, center, offset))
+    x0 = min(candidates, key=fEDIIS)
 
-        # Project the derivative
-        # df/dx = [dc/dx]_ij [df/dc]_i
-        dfdx = np.einsum('i,ij->j', dfdc, dcdx)
-
-        return dfdx
-    
-    result : OptimizeResult = scipy.optimize.minimize(
+    result = scipy.optimize.minimize(
         fEDIIS,
-        np.ones(m),
-        method='BFGS',
+        x0,
+        method='SLSQP',
         jac=grad_fEDIIS,
-        tol=1e-9
+        bounds=[(0.0, 1.0)] * m,
+        constraints={
+            'type': 'eq',
+            'fun': lambda c: np.sum(c) - 1.0,
+            'jac': lambda c: np.ones_like(c),
+        },
+        options={'ftol': tol, 'maxiter': maxiter},
     )
 
-    c = (result.x ** 2) / np.sum(result.x ** 2)
+    c = np.clip(result.x, 0.0, 1.0)
+    coefficient_sum = np.sum(c)
+    if not np.isfinite(coefficient_sum) or coefficient_sum <= 0.0:
+        c = np.array(x0, copy=True)
+    else:
+        c /= coefficient_sum
     f_ediis = np.einsum('i,inpq->npq', c, focks)
     f_ediis = f_ediis.reshape(fock_shape)
-    
+
     if return_c:
         return f_ediis, c
     else:
         return f_ediis
-
-
-     

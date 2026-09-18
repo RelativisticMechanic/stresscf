@@ -4,8 +4,7 @@ from algo import *
 # Benchmarks to compare
 DIIS_METHODS = [
     CDIIS,
-    EDIIS,
-    ADIIS,
+    EDIISCDIIS,
     LCIIS
 ]
 

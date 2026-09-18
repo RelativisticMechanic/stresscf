@@ -2,23 +2,32 @@
 
 This is a program to test an SCF DIIS implementation against standard benchmarks in literature. 
 
-The benchmarks are taken from "Comparison of self-consistent field convergence acceleration techniques" by Alejandro J. Garza and Gustavo E. Scuseria, published in The Journal of Chemical Physics (2012). 
+The benchmarks are taken from various sources on SCF algorithms. 
 
 These include:
 
-| Molecule                         | Method / Basis        | Guess  | 
-| ---                              | ---                   | ---    |
-| CH3CHO                           | UHF/6-31G(d)          | SAD    |
-| CrC                              | RB3LYP/6-31G          | SAD    |
-| CdIm2                            | RB3LYP/3-21G          | Core   |
-| SiH4                             | RVWN5/VWN5            | SAD    |
-| UF4                              | RB3LYP/LANL2DZ        | SAD    |
-| UF(BS)                           | UB3LYP/LANL2DZ        | Triplet|
-| Ru4CO                            | RB3LYP/LANL2DZ        | SAD    |
-| Ru4CO(BS)                        | UB3LYP/LANL2DZ        | Triplet|
-| Cr2                              | RHF/6-31G             | Core   |
-| N-Methyl-(2-nitrovinyl)amine (E) | RHF/6-31G(d)          | Core   |
+| Molecule                         | Method / Basis        | Guess  | Source                | 
+| ---                              | ---                   | ---    | ---                   |
+| CH3CHO                           | UHF/6-31G(d)          | SAD    | [1] [2] [3] [4] [5]   |
+| CrC                              | RB3LYP/6-31G          | SAD    | [2] [3] [4] [5]       |
+| CdIm2                            | RB3LYP/3-21G          | Core   | [3] [4] [5]           |
+| SiH3-H                           | RVWN5/VWN5            | SAD    | [3] [4] [5]           |
+| UF4                              | RB3LYP/LANL2DZ        | SAD    | [2] [3] [4] [5]       |
+| UF(BS)                           | UB3LYP/LANL2DZ        | Triplet| [3] [4] [5]           |
+| Ru4CO                            | RB3LYP/LANL2DZ        | SAD    | [3] [4] [5]           |
+| Ru4CO(BS)                        | UB3LYP/LANL2DZ        | Triplet| [3] [4] [5]           |
+| Cr2                              | RHF/6-31G             | Core   | [1]                   |
+| N-Methyl-(2-nitrovinyl)amine (E) | RHF/6-31G(d)          | Core   | [1]                   |
 
+[1]: Cancès, É., & Le Bris, C. (2000). Can we outperform the DIIS approach for electronic structure calculations?. *International Journal of Quantum Chemistry*, 79(2), 82-90.
+
+[2]: Kudin, K. N., Scuseria, G. E., & Cancès, É. (2002). A black-box self-consistent field convergence algorithm: One step closer. *The Journal of Chemical Physics*, 116(19), 8255-8261. 
+
+[3]: Hu, X., & Yang, W. (2010). Accelerating self-consistent field convergence with the augmented Roothaan–Hall energy function. *The Journal of Chemical Physics*, 132(5), 054109. 
+
+[4]: Garza, A. J., & Scuseria, G. E. (2012). Comparison of self-consistent field convergence acceleration techniques. *The Journal of Chemical Physics*, 137(5), 054110. 
+
+[5]: Li, H., & Yaron, D. J. (2016). A least-squares commutator in the iterative subspace method for accelerating self-consistent field convergence. *Journal of Chemical Theory and Computation*, 12(11), 5322-5332. 
 
 The LANL2DZ basis functions are taken from Basis Set Exchange (BSE) and are supplied under basis/ in Gaussian format
 while the ECPs are in NWChem format.

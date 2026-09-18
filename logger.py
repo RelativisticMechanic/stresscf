@@ -45,7 +45,7 @@ class ProgressBar:
         counter_width = len(str(self.total))
         self._last_line = (
             f"[{timestamp} {self.name}]: "
-            f"[{bar}] {current:>{counter_width}}/{self.total}"
+            f"{bar} {current:>{counter_width}}/{self.total}"
         )
 
         # ANSI color codes

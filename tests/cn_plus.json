@@ -1,0 +1,14 @@
+{
+    "tests": {
+        "cn_plus": {
+            "file":"cn_plus.xyz",
+            "method": "rhf",
+            "basis": "dzp_dunning",
+            "init_guess": "core",
+            "charge": 1,
+            "multiplicity": 1,
+            "stability_analysis": true,
+            "cartesian": true
+        }
+    }
+}

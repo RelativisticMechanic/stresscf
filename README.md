@@ -8,6 +8,7 @@ These include:
 
 | Molecule                         | Method / Basis        | Guess  | Source                | 
 | ---                              | ---                   | ---    | ---                   |
+| CN+                              | RHF/DZ                | Core   | [0]                   |
 | CH3CHO                           | UHF/6-31G(d)          | SAD    | [1] [2] [3] [4] [5]   |
 | CrC                              | RB3LYP/6-31G          | SAD    | [2] [3] [4] [5]       |
 | CdIm2                            | RB3LYP/3-21G          | Core   | [3] [4] [5]           |
@@ -18,6 +19,8 @@ These include:
 | Ru4CO(BS)                        | UB3LYP/LANL2DZ        | Triplet| [3] [4] [5]           |
 | Cr2                              | RHF/6-31G             | Core   | [1]                   |
 | N-Methyl-(2-nitrovinyl)amine (E) | RHF/6-31G(d)          | Core   | [1]                   |
+
+[0]: Pulay, P. (1980). Convergence acceleration of iterative sequences: The case of SCF iteration. *Chemical Physics Letters*, 73(2), 393–398.
 
 [1]: Cancès, É., & Le Bris, C. (2000). Can we outperform the DIIS approach for electronic structure calculations?. *International Journal of Quantum Chemistry*, 79(2), 82-90.
 

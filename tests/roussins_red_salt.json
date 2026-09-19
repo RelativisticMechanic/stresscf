@@ -1,0 +1,13 @@
+{
+    "tests": {
+        "roussins_red_salt": {
+            "file":"roussins_red_salt.xyz",
+            "method":"rks",
+            "xc":"tpssh",
+            "basis": "def2-TZVPP",
+            "init_guess": "atom",
+            "charge": -2,
+            "multiplicity": 3
+        }
+    }
+}

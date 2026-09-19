@@ -1,0 +1,344 @@
+ $sgautam: ~/projects/stresscf on main ❯ python ./stresscf.py ./tests/exc26.json 
+[02:54:06 STRESSCF]: **************************************************
+[02:54:06 STRESSCF]: Testing: exc26
+Testing: 01-Acetamide-173
+[02:54:06 STRESSCF]: Total Gaussian basis functions: 81
+[02:54:06 STRESSCF]: ==================================================
+[02:54:06 STRESSCF]: CDIIS on 01-Acetamide-173
+[02:54:07 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  11/250 [↓1.19940e-11]
+[02:54:07 STRESSCF]: Energy: -209.0373188576296 (c)
+[02:54:07 STRESSCF]: Iterations: 11
+[02:54:07 STRESSCF]: Time taken: 1479  ms
+[02:54:07 STRESSCF]: Time/Iteration: 134.51 ms
+[02:54:07 STRESSCF]: ==================================================
+[02:54:07 STRESSCF]: AIDIIS on 01-Acetamide-173
+[02:54:09 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  11/250 [↓1.70530e-11]
+[02:54:09 STRESSCF]: Energy: -209.03731885762818 (c)
+[02:54:09 STRESSCF]: Iterations: 11
+[02:54:09 STRESSCF]: Time taken: 1782  ms
+[02:54:09 STRESSCF]: Time/Iteration: 162.08 ms
+Testing: 02-Adenine-185
+[02:54:10 STRESSCF]: Total Gaussian basis functions: 165
+[02:54:10 STRESSCF]: ==================================================
+[02:54:10 STRESSCF]: CDIIS on 02-Adenine-185
+[02:54:18 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  13/250 [↓2.80806e-11]
+[02:54:18 STRESSCF]: Energy: -466.9292220307242 (c)
+[02:54:18 STRESSCF]: Iterations: 13
+[02:54:18 STRESSCF]: Time taken: 7015  ms
+[02:54:18 STRESSCF]: Time/Iteration: 539.62 ms
+[02:54:18 STRESSCF]: ==================================================
+[02:54:18 STRESSCF]: AIDIIS on 02-Adenine-185
+[02:54:29 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  13/250 [↓2.86491e-11]
+[02:54:29 STRESSCF]: Energy: -466.9292220307011 (c)
+[02:54:29 STRESSCF]: Iterations: 13
+[02:54:29 STRESSCF]: Time taken: 9372  ms
+[02:54:29 STRESSCF]: Time/Iteration: 721.00 ms
+Testing: 03-Anthracene-8111
+[02:54:30 STRESSCF]: Total Gaussian basis functions: 246
+[02:54:30 STRESSCF]: ==================================================
+[02:54:30 STRESSCF]: CDIIS on 03-Anthracene-8111
+[02:55:06 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  11/250 [↓3.16049e-11]
+[02:55:08 STRESSCF]: Energy: -539.1061590657997 (c)
+[02:55:08 STRESSCF]: Iterations: 11
+[02:55:08 STRESSCF]: Time taken: 34520  ms
+[02:55:08 STRESSCF]: Time/Iteration: 3138.20 ms
+[02:55:08 STRESSCF]: ==================================================
+[02:55:08 STRESSCF]: AIDIIS on 03-Anthracene-8111
+[02:55:58 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  13/250 [↓3.68345e-11]
+[02:56:00 STRESSCF]: Energy: -539.1061590657647 (c)
+[02:56:00 STRESSCF]: Iterations: 13
+[02:56:00 STRESSCF]: Time taken: 49166  ms
+[02:56:00 STRESSCF]: Time/Iteration: 3782.03 ms
+Testing: 04-Azulene-8876
+[02:56:01 STRESSCF]: Total Gaussian basis functions: 180
+[02:56:01 STRESSCF]: ==================================================
+[02:56:01 STRESSCF]: CDIIS on 04-Azulene-8876
+[02:56:10 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  12/250 [↓6.69615e-11]
+[02:56:11 STRESSCF]: Energy: -385.5278585865571 (c)
+[02:56:11 STRESSCF]: Iterations: 12
+[02:56:11 STRESSCF]: Time taken: 8159  ms
+[02:56:11 STRESSCF]: Time/Iteration: 679.92 ms
+[02:56:11 STRESSCF]: ==================================================
+[02:56:11 STRESSCF]: AIDIIS on 04-Azulene-8876
+[02:56:26 STRESSCF]: ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  16/250 [↓4.35421e-11]
+[02:56:27 STRESSCF]: Energy: -385.5278585864302 (c)
+[02:56:27 STRESSCF]: Iterations: 16
+[02:56:27 STRESSCF]: Time taken: 14080  ms
+[02:56:27 STRESSCF]: Time/Iteration: 880.00 ms
+Testing: 05-Benzene-236
+[02:56:27 STRESSCF]: Total Gaussian basis functions: 114
+[02:56:27 STRESSCF]: ==================================================
+[02:56:27 STRESSCF]: CDIIS on 05-Benzene-236
+[02:56:30 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   9/250 [↑1.02318e-12]
+[02:56:30 STRESSCF]: Energy: -232.06219019089926 (c)
+[02:56:30 STRESSCF]: Iterations: 9
+[02:56:30 STRESSCF]: Time taken: 2283  ms
+[02:56:30 STRESSCF]: Time/Iteration: 253.69 ms
+[02:56:30 STRESSCF]: ==================================================
+[02:56:30 STRESSCF]: AIDIIS on 05-Benzene-236
+[02:56:33 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   9/250 [↑1.13687e-13]
+[02:56:33 STRESSCF]: Energy: -232.06219019089852 (c)
+[02:56:33 STRESSCF]: Iterations: 9
+[02:56:33 STRESSCF]: Time taken: 2897  ms
+[02:56:33 STRESSCF]: Time/Iteration: 321.99 ms
+Testing: 06-C5_67034357
+[02:56:34 STRESSCF]: Total Gaussian basis functions: 70
+[02:56:34 STRESSCF]: ==================================================
+[02:56:34 STRESSCF]: CDIIS on 06-C5_67034357
+[02:56:36 STRESSCF]: ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  19/250 [↓1.98952e-11]
+[02:56:36 STRESSCF]: Energy: -185.61306115871355 (c)
+[02:56:36 STRESSCF]: Iterations: 19
+[02:56:36 STRESSCF]: Time taken: 1479  ms
+[02:56:36 STRESSCF]: Time/Iteration: 77.88 ms
+[02:56:36 STRESSCF]: ==================================================
+[02:56:36 STRESSCF]: AIDIIS on 06-C5_67034357
+[02:56:37 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  15/250 [↓6.80984e-11]
+[02:56:38 STRESSCF]: Energy: -185.6130611586658 (c)
+[02:56:38 STRESSCF]: Iterations: 15
+[02:56:38 STRESSCF]: Time taken: 1527  ms
+[02:56:38 STRESSCF]: Time/Iteration: 101.85 ms
+Testing: 07-Formyl-HCHO-692
+[02:56:38 STRESSCF]: Total Gaussian basis functions: 38
+[02:56:38 STRESSCF]: ==================================================
+[02:56:38 STRESSCF]: CDIIS on 07-Formyl-HCHO-692
+[02:56:39 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   9/250 [↓2.07478e-12]
+[02:56:39 STRESSCF]: Energy: -114.39125517737612 (c)
+[02:56:39 STRESSCF]: Iterations: 9
+[02:56:39 STRESSCF]: Time taken: 246  ms
+[02:56:39 STRESSCF]: Time/Iteration: 27.42 ms
+[02:56:39 STRESSCF]: ==================================================
+[02:56:39 STRESSCF]: AIDIIS on 07-Formyl-HCHO-692
+[02:56:39 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   9/250 [↓7.73070e-12]
+[02:56:39 STRESSCF]: Energy: -114.39125517737553 (c)
+[02:56:39 STRESSCF]: Iterations: 9
+[02:56:39 STRESSCF]: Time taken: 304  ms
+[02:56:39 STRESSCF]: Time/Iteration: 33.80 ms
+Testing: 08-Thioformaldehyde-HCHS-71446
+[02:56:40 STRESSCF]: Total Gaussian basis functions: 42
+[02:56:40 STRESSCF]: ==================================================
+[02:56:40 STRESSCF]: CDIIS on 08-Thioformaldehyde-HCHS-71446
+[02:56:40 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  10/250 [↓4.54747e-13]
+[02:56:40 STRESSCF]: Energy: -437.30063795071044 (c)
+[02:56:40 STRESSCF]: Iterations: 10
+[02:56:40 STRESSCF]: Time taken: 432  ms
+[02:56:40 STRESSCF]: Time/Iteration: 43.26 ms
+[02:56:40 STRESSCF]: ==================================================
+[02:56:40 STRESSCF]: AIDIIS on 08-Thioformaldehyde-HCHS-71446
+[02:56:41 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   9/250 [↓5.17844e-11]
+[02:56:41 STRESSCF]: Energy: -437.30063795070134 (c)
+[02:56:41 STRESSCF]: Iterations: 9
+[02:56:41 STRESSCF]: Time taken: 490  ms
+[02:56:41 STRESSCF]: Time/Iteration: 54.50 ms
+Testing: 09-Coumarin153_65513
+[02:56:41 STRESSCF]: Total Gaussian basis functions: 378
+[02:56:41 STRESSCF]: ==================================================
+[02:56:41 STRESSCF]: CDIIS on 09-Coumarin153_65513
+[02:59:00 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  14/250 [↓1.54614e-11]
+[02:59:06 STRESSCF]: Energy: -1122.0137504782954 (c)
+[02:59:06 STRESSCF]: Iterations: 14
+[02:59:06 STRESSCF]: Time taken: 134074  ms
+[02:59:06 STRESSCF]: Time/Iteration: 9576.74 ms
+[02:59:06 STRESSCF]: ==================================================
+[02:59:06 STRESSCF]: AIDIIS on 09-Coumarin153_65513
+[03:01:56 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  14/250 [↓1.22782e-11]
+[03:02:03 STRESSCF]: Energy: -1122.0137504782595 (c)
+[03:02:03 STRESSCF]: Iterations: 14
+[03:02:03 STRESSCF]: Time taken: 165523  ms
+[03:02:03 STRESSCF]: Time/Iteration: 11823.08 ms
+Testing: 10-DMABN-64128
+[03:02:03 STRESSCF]: Total Gaussian basis functions: 204
+[03:02:03 STRESSCF]: ==================================================
+[03:02:03 STRESSCF]: CDIIS on 10-DMABN-64128
+[03:02:17 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  13/250 [↓3.38787e-11]
+[03:02:18 STRESSCF]: Energy: -458.07853407256493 (c)
+[03:02:18 STRESSCF]: Iterations: 13
+[03:02:18 STRESSCF]: Time taken: 12087  ms
+[03:02:18 STRESSCF]: Time/Iteration: 929.78 ms
+[03:02:18 STRESSCF]: ==================================================
+[03:02:18 STRESSCF]: AIDIIS on 10-DMABN-64128
+[03:02:36 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  13/250 [↓3.17186e-11]
+[03:02:36 STRESSCF]: Energy: -458.07853407254106 (c)
+[03:02:36 STRESSCF]: Iterations: 13
+[03:02:36 STRESSCF]: Time taken: 16231  ms
+[03:02:36 STRESSCF]: Time/Iteration: 1248.54 ms
+Testing: 11-Hexatriene-4518927
+[03:02:37 STRESSCF]: Total Gaussian basis functions: 124
+[03:02:37 STRESSCF]: ==================================================
+[03:02:37 STRESSCF]: CDIIS on 11-Hexatriene-4518927
+[03:02:40 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  10/250 [↓1.28466e-11]
+[03:02:41 STRESSCF]: Energy: -233.15692691297843 (c)
+[03:02:41 STRESSCF]: Iterations: 10
+[03:02:41 STRESSCF]: Time taken: 2958  ms
+[03:02:41 STRESSCF]: Time/Iteration: 295.83 ms
+[03:02:41 STRESSCF]: ==================================================
+[03:02:41 STRESSCF]: AIDIIS on 11-Hexatriene-4518927
+[03:02:45 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  10/250 [↓2.04636e-12]
+[03:02:45 STRESSCF]: Energy: -233.15692691292426 (c)
+[03:02:45 STRESSCF]: Iterations: 10
+[03:02:45 STRESSCF]: Time taken: 3827  ms
+[03:02:45 STRESSCF]: Time/Iteration: 382.75 ms
+Testing: 12-Naphthalene-906
+[03:02:46 STRESSCF]: Total Gaussian basis functions: 180
+[03:02:46 STRESSCF]: ==================================================
+[03:02:46 STRESSCF]: CDIIS on 12-Naphthalene-906
+[03:02:53 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  10/250 [↓1.79625e-11]
+[03:02:54 STRESSCF]: Energy: -385.5878344370764 (c)
+[03:02:54 STRESSCF]: Iterations: 10
+[03:02:54 STRESSCF]: Time taken: 6510  ms
+[03:02:54 STRESSCF]: Time/Iteration: 651.06 ms
+[03:02:54 STRESSCF]: ==================================================
+[03:02:54 STRESSCF]: AIDIIS on 12-Naphthalene-906
+[03:03:07 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  14/250 [↓1.23919e-11]
+[03:03:08 STRESSCF]: Energy: -385.58783443698604 (c)
+[03:03:08 STRESSCF]: Iterations: 14
+[03:03:08 STRESSCF]: Time taken: 12302  ms
+[03:03:08 STRESSCF]: Time/Iteration: 878.75 ms
+Testing: 13-Norbonadiene-8160
+[03:03:08 STRESSCF]: Total Gaussian basis functions: 138
+[03:03:08 STRESSCF]: ==================================================
+[03:03:08 STRESSCF]: CDIIS on 13-Norbonadiene-8160
+[03:03:13 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  10/250 [↓9.09495e-12]
+[03:03:13 STRESSCF]: Energy: -271.2348443313517 (c)
+[03:03:13 STRESSCF]: Iterations: 10
+[03:03:13 STRESSCF]: Time taken: 3737  ms
+[03:03:13 STRESSCF]: Time/Iteration: 373.72 ms
+[03:03:13 STRESSCF]: ==================================================
+[03:03:13 STRESSCF]: AIDIIS on 13-Norbonadiene-8160
+[03:03:19 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  10/250 [↓4.46789e-11]
+[03:03:19 STRESSCF]: Energy: -271.2348443313307 (c)
+[03:03:19 STRESSCF]: Iterations: 10
+[03:03:19 STRESSCF]: Time taken: 4939  ms
+[03:03:19 STRESSCF]: Time/Iteration: 493.96 ms
+Testing: 14-Ozone-23208
+[03:03:19 STRESSCF]: Total Gaussian basis functions: 42
+[03:03:19 STRESSCF]: ==================================================
+[03:03:19 STRESSCF]: CDIIS on 14-Ozone-23208
+[03:03:20 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  10/250 [↓3.69482e-12]
+[03:03:20 STRESSCF]: Energy: -225.21785790796608 (c)
+[03:03:20 STRESSCF]: Iterations: 10
+[03:03:20 STRESSCF]: Time taken: 327  ms
+[03:03:20 STRESSCF]: Time/Iteration: 32.74 ms
+[03:03:20 STRESSCF]: ==================================================
+[03:03:20 STRESSCF]: AIDIIS on 14-Ozone-23208
+[03:03:20 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   9/250 [↓4.11546e-11]
+[03:03:20 STRESSCF]: Energy: -225.21785790795397 (c)
+[03:03:20 STRESSCF]: Iterations: 9
+[03:03:20 STRESSCF]: Time taken: 358  ms
+[03:03:20 STRESSCF]: Time/Iteration: 39.89 ms
+Testing: 15-Octatetraene-4575894
+[03:03:21 STRESSCF]: Total Gaussian basis functions: 162
+[03:03:21 STRESSCF]: ==================================================
+[03:03:21 STRESSCF]: CDIIS on 15-Octatetraene-4575894
+[03:03:27 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  11/250 [↓1.34150e-11]
+[03:03:28 STRESSCF]: Energy: -310.488308121921 (c)
+[03:03:28 STRESSCF]: Iterations: 11
+[03:03:28 STRESSCF]: Time taken: 5730  ms
+[03:03:28 STRESSCF]: Time/Iteration: 520.93 ms
+[03:03:28 STRESSCF]: ==================================================
+[03:03:28 STRESSCF]: AIDIIS on 15-Octatetraene-4575894
+[03:03:36 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  11/250 [↓6.82121e-12]
+[03:03:37 STRESSCF]: Energy: -310.4883081218803 (c)
+[03:03:37 STRESSCF]: Iterations: 11
+[03:03:37 STRESSCF]: Time taken: 7858  ms
+[03:03:37 STRESSCF]: Time/Iteration: 714.39 ms
+Testing: 16-Tetraphosphorus-109894
+[03:03:37 STRESSCF]: Total Gaussian basis functions: 72
+[03:03:37 STRESSCF]: ==================================================
+[03:03:37 STRESSCF]: CDIIS on 16-Tetraphosphorus-109894
+[03:03:38 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   8/250 [↓7.68523e-11]
+[03:03:39 STRESSCF]: Energy: -1364.6202751864757 (c)
+[03:03:39 STRESSCF]: Iterations: 8
+[03:03:39 STRESSCF]: Time taken: 849  ms
+[03:03:39 STRESSCF]: Time/Iteration: 106.17 ms
+[03:03:39 STRESSCF]: ==================================================
+[03:03:39 STRESSCF]: AIDIIS on 16-Tetraphosphorus-109894
+[03:03:40 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   9/250 [↑4.09273e-12]
+[03:03:40 STRESSCF]: Energy: -1364.6202751864812 (c)
+[03:03:40 STRESSCF]: Iterations: 9
+[03:03:40 STRESSCF]: Time taken: 1118  ms
+[03:03:40 STRESSCF]: Time/Iteration: 124.25 ms
+Testing: 17-Perylene-8788
+[03:03:40 STRESSCF]: Total Gaussian basis functions: 340
+[03:03:40 STRESSCF]: ==================================================
+[03:03:40 STRESSCF]: CDIIS on 17-Perylene-8788
+[03:05:22 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  12/250 [↓2.00089e-11]
+[03:05:27 STRESSCF]: Energy: -768.8055652924425 (c)
+[03:05:27 STRESSCF]: Iterations: 12
+[03:05:27 STRESSCF]: Time taken: 97751  ms
+[03:05:27 STRESSCF]: Time/Iteration: 8145.95 ms
+[03:05:27 STRESSCF]: ==================================================
+[03:05:27 STRESSCF]: AIDIIS on 17-Perylene-8788
+[03:07:58 STRESSCF]: ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  16/250 [↑1.36424e-12]
+[03:08:03 STRESSCF]: Energy: -768.8055652922851 (c)
+[03:08:03 STRESSCF]: Iterations: 16
+[03:08:03 STRESSCF]: Time taken: 147228  ms
+[03:08:03 STRESSCF]: Time/Iteration: 9201.79 ms
+Testing: 18-Porphyrin-10447586
+[03:08:04 STRESSCF]: Total Gaussian basis functions: 406
+[03:08:04 STRESSCF]: ==================================================
+[03:08:04 STRESSCF]: CDIIS on 18-Porphyrin-10447586
+[03:10:59 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  14/250 [↓8.54925e-11]
+[03:11:07 STRESSCF]: Energy: -988.7024328750088 (c)
+[03:11:07 STRESSCF]: Iterations: 14
+[03:11:07 STRESSCF]: Time taken: 168729  ms
+[03:11:07 STRESSCF]: Time/Iteration: 12052.12 ms
+[03:11:07 STRESSCF]: ==================================================
+[03:11:07 STRESSCF]: AIDIIS on 18-Porphyrin-10447586
+[03:15:25 STRESSCF]: ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  18/250 [↓5.45697e-11]
+[03:15:34 STRESSCF]: Energy: -988.70243287478 (c)
+[03:15:34 STRESSCF]: Iterations: 18
+[03:15:34 STRESSCF]: Time taken: 253124  ms
+[03:15:34 STRESSCF]: Time/Iteration: 14062.48 ms
+Testing: 19-Trans-Azobenzene-2185
+[03:15:35 STRESSCF]: Total Gaussian basis functions: 246
+[03:15:35 STRESSCF]: ==================================================
+[03:15:35 STRESSCF]: CDIIS on 19-Trans-Azobenzene-2185
+[03:16:11 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  13/250 [↓1.31877e-11]
+[03:16:13 STRESSCF]: Energy: -572.2883381108215 (c)
+[03:16:13 STRESSCF]: Iterations: 13
+[03:16:13 STRESSCF]: Time taken: 35216  ms
+[03:16:13 STRESSCF]: Time/Iteration: 2708.96 ms
+[03:16:13 STRESSCF]: ==================================================
+[03:16:13 STRESSCF]: AIDIIS on 19-Trans-Azobenzene-2185
+[03:16:57 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  13/250 [↓1.70530e-11]
+[03:16:59 STRESSCF]: Energy: -572.2883381107438 (c)
+[03:16:59 STRESSCF]: Iterations: 13
+[03:16:59 STRESSCF]: Time taken: 43610  ms
+[03:16:59 STRESSCF]: Time/Iteration: 3354.67 ms
+Testing: 20-Tetrazine-10639933
+[03:17:00 STRESSCF]: Total Gaussian basis functions: 94
+[03:17:00 STRESSCF]: ==================================================
+[03:17:00 STRESSCF]: CDIIS on 20-Tetrazine-10639933
+[03:17:02 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  11/250 [↓2.83080e-11]
+[03:17:02 STRESSCF]: Energy: -296.0564172992315 (c)
+[03:17:02 STRESSCF]: Iterations: 11
+[03:17:02 STRESSCF]: Time taken: 1721  ms
+[03:17:02 STRESSCF]: Time/Iteration: 156.53 ms
+[03:17:02 STRESSCF]: ==================================================
+[03:17:02 STRESSCF]: AIDIIS on 20-Tetrazine-10639933
+[03:17:05 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  11/250 [↓4.30873e-11]
+[03:17:05 STRESSCF]: Energy: -296.05641729920194 (c)
+[03:17:05 STRESSCF]: Iterations: 11
+[03:17:05 STRESSCF]: Time taken: 2172  ms
+[03:17:05 STRESSCF]: Time/Iteration: 197.47 ms
+Testing: 21-Uracil-1141
+[03:17:05 STRESSCF]: Total Gaussian basis functions: 132
+[03:17:05 STRESSCF]: ==================================================
+[03:17:05 STRESSCF]: CDIIS on 21-Uracil-1141
+[03:17:10 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  13/250 [↓7.61702e-12]
+[03:17:10 STRESSCF]: Energy: -414.45976161884306 (c)
+[03:17:10 STRESSCF]: Iterations: 13
+[03:17:10 STRESSCF]: Time taken: 4014  ms
+[03:17:10 STRESSCF]: Time/Iteration: 308.82 ms
+[03:17:10 STRESSCF]: ==================================================
+[03:17:10 STRESSCF]: AIDIIS on 21-Uracil-1141
+[03:17:16 STRESSCF]: █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  13/250 [↓7.73070e-12]
+[03:17:16 STRESSCF]: Energy: -414.45976161880566 (c)
+[03:17:16 STRESSCF]: Iterations: 13
+[03:17:16 STRESSCF]: Time taken: 5382  ms
+[03:17:16 STRESSCF]: Time/Iteration: 414.02 ms
+[03:17:17 STRESSCF]: **************************************************
+[03:17:17 STRESSCF]: All tests completed.
+[03:17:17 STRESSCF]: Saved summary results to: results/results.csv
+[03:17:17 STRESSCF]: Saved iteration histories to: results/histories.csv
+[03:17:17 STRESSCF]: Saved plots to: /home/sgautam/projects/stresscf/results

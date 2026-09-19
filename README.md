@@ -19,6 +19,7 @@ These include:
 | Ru4CO(BS)                        | UB3LYP/LANL2DZ        | Triplet| [3] [4] [5]           |
 | Cr2                              | RHF/6-31G             | Core   | [1]                   |
 | N-Methyl-(2-nitrovinyl)amine (E) | RHF/6-31G(d)          | Core   | [1]                   |
+| Roussin's Red Salt Anion         | tpSSH/def2-TZVPP      | SAD    | [6]                   |
 
 [0]: Pulay, P. (1980). Convergence acceleration of iterative sequences: The case of SCF iteration. *Chemical Physics Letters*, 73(2), 393–398.
 
@@ -31,6 +32,8 @@ These include:
 [4]: Garza, A. J., & Scuseria, G. E. (2012). Comparison of self-consistent field convergence acceleration techniques. *The Journal of Chemical Physics*, 137(5), 054110. 
 
 [5]: Li, H., & Yaron, D. J. (2016). A least-squares commutator in the iterative subspace method for accelerating self-consistent field convergence. *Journal of Chemical Theory and Computation*, 12(11), 5322-5332. 
+
+[6]: Qin, L.; Wang, Z.; Suo, B. (2024) Efficient and Robust Ab Initio Self-Consistent Field Acceleration Algorithm Based on a Semiempirical Model Hamiltonian. *J. Chem. Theory Comput.*, *20* (20), 8921–8933.
 
 The LANL2DZ basis functions are taken from Basis Set Exchange (BSE) and are supplied under basis/ in Gaussian format
 while the ECPs are in NWChem format.

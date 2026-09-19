@@ -4,8 +4,7 @@ from algo import *
 # Benchmarks to compare
 DIIS_METHODS = [
     CDIIS,
-    EDIISCDIIS,
-    LCIIS
+    AIDIIS
 ]
 
 # DIIS history size
@@ -18,7 +17,7 @@ DIIS_START = 0
 GRID_LEVEL = 3
 
 # Energy & Gradient Convergence Criteria
-CONV_E = 1e-10
+CONV_E = 1e-8
 CONV_G = 1e-5
 
 # Maximum iterations

@@ -1,0 +1,13 @@
+{
+    "tests": {
+        "exc26": {
+            "file":"TESTDIR EXC26",
+            "method":"rks",
+            "xc":"b3lyp",
+            "basis": "def2-SVP",
+            "init_guess": "atom",
+            "charge": 0,
+            "multiplicity": 1
+        }
+    }
+}

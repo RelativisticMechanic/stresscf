@@ -2,6 +2,7 @@ from .lciis import LCIIS
 from .oda import ODA
 from .pure_roothaan_hall import PureRoothaanHall
 from .ediis_cdiis import EDIISCDIIS, EDIIS_CDIIS
+from .aidiis import AIDIIS
 
 __all__ = [
     "LCIIS",
@@ -9,4 +10,5 @@ __all__ = [
     "PureRoothaanHall",
     "EDIISCDIIS",
     "EDIIS_CDIIS",
+    "AIDIIS"
 ]
